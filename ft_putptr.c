@@ -15,13 +15,12 @@ int	ft_putptr(void *ptr)
 {
 	int				count;
 	unsigned long	p;
-	char			*nil;
 
 	count = 0;
 	if (!ptr)
 	{
-		nil = "(nil)";
-		count = count + ft_putstr(nil);
+		count = count + ft_putstr("(nil)");
+		return (5);
 	}
 	else
 	{

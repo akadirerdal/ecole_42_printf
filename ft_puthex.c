@@ -20,7 +20,7 @@ int	ft_puthex_low(unsigned long n)
 	base_low = "0123456789abcdef";
 	if (n >= 16)
 		count = count + ft_puthex_low(n / 16);
-	count = count + ft_putchar(base_low[n % 10]);
+	count = count + ft_putchar(base_low[n % 16]);
 	return (count);
 }
 
