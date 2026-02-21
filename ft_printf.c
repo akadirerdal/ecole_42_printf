@@ -24,6 +24,11 @@ int	ft_printf(const char *c, ...)
 	va_start(args, c);
 	while (c[i])
 	{
+		if (c[i] == '%' && !c[i + 1])
+		{
+			va_end(args);
+			return (-1);
+		}
 		if (c[i] == '%' && c[i + 1])
 		{
 			count = count + ft_format(c[i + 1], args);
