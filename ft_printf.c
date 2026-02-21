@@ -25,10 +25,7 @@ int	ft_printf(const char *c, ...)
 	while (c[i])
 	{
 		if (c[i] == '%' && !c[i + 1])
-		{
-			va_end(args);
-			return (-1);
-		}
+			return (va_end(args), -1);
 		if (c[i] == '%' && c[i + 1])
 		{
 			count = count + ft_format(c[i + 1], args);
@@ -40,6 +37,5 @@ int	ft_printf(const char *c, ...)
 			i++;
 		}
 	}
-	va_end(args);
-	return (count);
+	return (va_end(args), count);
 }
